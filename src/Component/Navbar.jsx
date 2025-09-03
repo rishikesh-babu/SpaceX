@@ -33,7 +33,7 @@ export default function Navbar() {
     ]
 
     return (
-        <nav className="relative p-4 bg-gray-400 text-gray-900 dark:bg-gray-900 dark:text-white shadow-md transition-colors duration-300 flex justify-between items-center">
+        <nav className="relative p-4 md:p-6 bg-gray-400 text-gray-900 dark:bg-gray-900 dark:text-white shadow-md transition-colors duration-300 flex justify-between items-center">
             <div className="text-2xl font-bold">
                 <Link
                     to="/"
@@ -44,7 +44,7 @@ export default function Navbar() {
             </div>
             
 
-            <div className="flex justify-center md:hidden">
+            <div className="flex justify-center">
                 {/* Menu */}
                 <div className={`absolute top-full left-0 w-full bg-gray-300 dark:bg-gray-900 font-medium text-lg border-t flex flex-col transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                     {menu.map((item, index) => (
