@@ -42,6 +42,7 @@ export default function Navbar() {
                     🚀 SpaceX
                 </Link>
             </div>
+            
 
             <div className="flex justify-center md:hidden">
                 {/* Menu */}
