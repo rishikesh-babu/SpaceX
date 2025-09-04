@@ -52,12 +52,12 @@ export default function Navbar() {
                             key={index}
                             to={item.path}
                            
-                            className="py-4 pl-5 w-full text-left hover:text-blue-500 dark:hover:text-blue-400 hover:bg-gray-400 dark:hover:bg-gray-800 transition-colors"
+                            className="py-4 pl-5 w-full text-left text-info hover:text-secondary hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors duration-200"
                         >
                             {item.name}
                         </Link>
                     ))}
-                    <div className="py-4 pl-5 text-left dark:hover:bg-gray-800">
+                    <div className="py-4 pl-5 w-full text-left text-info hover:text-secondary hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors duration-200">
                         <Theme />
                     </div>
                 </div>
