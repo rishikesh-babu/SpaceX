@@ -21,7 +21,7 @@ export default function Rockets() {
     }
 
     return (
-        <div className="p-6 min-h-screen">
+        <div className="py-6 px-1 min-h-screen">
             <h1 className="text-3xl font-bold mb-6 text-center">🚀 SpaceX Rockets</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
