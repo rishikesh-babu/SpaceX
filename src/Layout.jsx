@@ -6,7 +6,7 @@ function Layout() {
     return (
         <>
             <Navbar />
-            <main className='pt-[4.5rem]'>
+            <main className='pt-[4.5rem] md:pt-[5.5rem]'>
                 <Outlet />
             </main>
         </>
