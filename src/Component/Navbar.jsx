@@ -46,12 +46,12 @@ export default function Navbar() {
 
             <div className="flex justify-center">
                 {/* Menu */}
-                <div className={`absolute top-full left-0 w-full bg-gray-200 dark:bg-gray-900 font-medium text-lg border-t rounded flex flex-col transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+                <div onClick={() => setIsOpen(false)} className={`absolute top-full left-0 w-full bg-gray-200 dark:bg-gray-900 font-medium text-lg border-t rounded flex flex-col transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                     {menu.map((item, index) => (
                         <Link
                             key={index}
                             to={item.path}
-                            onClick={() => setIsOpen(false)}
+                           
                             className="py-4 pl-5 w-full text-left hover:text-blue-500 dark:hover:text-blue-400 hover:bg-gray-400 dark:hover:bg-gray-800 transition-colors"
                         >
                             {item.name}

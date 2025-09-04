@@ -1,0 +1,112 @@
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+export default function RocketDetails() {
+    const { id } = useParams()
+    const [rocket, setRocket] = useState(null)
+
+    useEffect(() => {
+        fetchRocketDetails()
+    }, [])
+
+    function fetchRocketDetails() {
+        axios({
+            method: 'GET',
+            url: `https://api.spacexdata.com/v4/rockets/${id}`
+        })
+            .then((res) => {
+                console.log('res :>> ', res);
+                setRocket(res.data)
+            })
+            .catch((err) => {
+                console.log('err :>> ', err);
+                alert('Failed to fetch rocket details. Please try again later.')
+            })
+    }
+    return (
+        <div className="p-6">
+            <h1 className="mb-4 font-bold text-4xl text-center darg:text-accent">{rocket?.name}</h1>
+            <p className="mb-6 text-lg dark:text-cyan-300 text-">{rocket?.description}</p>
+
+            {/* Images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                {rocket?.flickr_images?.map((img, i) => (
+                    <img key={i} src={img} alt={rocket?.name} className="rounded-lg" />
+                ))}
+            </div>
+
+            {/* Basic Info */}
+            <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">Basic Info</h2>
+                <ul className="list-disc pl-6">
+                    <li>Type: {rocket?.type}</li>
+                    <li>Active: {rocket?.active ? "Yes" : "No"}</li>
+                    <li>Stages: {rocket?.stages}</li>
+                    <li>Boosters: {rocket?.boosters}</li>
+                    <li>First Flight: {rocket?.first_flight}</li>
+                    <li>Country: {rocket?.country}</li>
+                    <li>Company: {rocket?.company}</li>
+                    <li>
+                        Wikipedia: <a href={rocket?.wikipedia} className="text-blue-600 underline">Link</a>
+                    </li>
+                </ul>
+            </div>
+
+            {/* Dimensions */}
+            <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">Dimensions</h2>
+                <p>Height: {rocket?.height?.meters} m ({rocket?.height?.feet} ft)</p>
+                <p>Diameter: {rocket?.diameter?.meters} m ({rocket?.diameter?.feet} ft)</p>
+                <p>Mass: {rocket?.mass?.kg} kg ({rocket?.mass?.lb} lb)</p>
+            </div>
+
+            {/* First Stage */}
+            <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">First Stage</h2>
+                <p>Engines: {rocket?.first_stage?.engines}</p>
+                <p>Thrust (Sea Level): {rocket?.first_stage?.thrust_sea_level?.kN} kN</p>
+                <p>Thrust (Vacuum): {rocket?.first_stage?.thrust_vacuum.kN} kN</p>
+                <p>Fuel: {rocket?.first_stage?.fuel_amount_tons} tons</p>
+                <p>Burn Time: {rocket?.first_stage?.burn_time_sec} sec</p>
+                <p>Reusable: {rocket?.first_stage?.reusable ? "Yes" : "No"}</p>
+            </div>
+
+            {/* Second Stage */}
+            <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">Second Stage</h2>
+                <p>Engines: {rocket?.second_stage?.engines}</p>
+                <p>Thrust: {rocket?.second_stage?.thrust?.kN} kN</p>
+                <p>Fuel: {rocket?.second_stage?.fuel_amount_tons} tons</p>
+                <p>Burn Time: {rocket?.second_stage?.burn_time_sec} sec</p>
+                <p>Payload Option: {rocket?.second_stage?.payloads?.option_1}</p>
+                <p>
+                    Fairing: {rocket?.second_stage?.payloads?.composite_fairing?.height?.meters} m ×{" "}
+                    {rocket?.second_stage?.payloads?.composite_fairing?.diameter?.meters} m
+                </p>
+            </div>
+
+            {/* Engines */}
+            <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">Engines</h2>
+                <p>Type: {rocket?.engines?.type}</p>
+                <p>Version: {rocket?.engines?.version}</p>
+                <p>Layout: {rocket?.engines?.layout}</p>
+                <p>ISP: {rocket?.engines?.isp?.sea_level} (Sea) / {rocket?.engines?.isp?.vacuum} (Vacuum)</p>
+                <p>Thrust-to-Weight: {rocket?.engines?.thrust_to_weight}</p>
+                <p>Propellants: {rocket?.engines?.propellant_1} + {rocket?.engines?.propellant_2}</p>
+            </div>
+
+            {/* Payloads */}
+            <div className="mb-6">
+                <h2 className="text-2xl font-semibold mb-2">Payload Capacities</h2>
+                <ul>
+                    {rocket?.payload_weights?.map((payload) => (
+                        <li key={payload?.id}>{payload?.name}: {payload?.kg} kg ({payload?.lb} lb)</li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+
+    )
+}
