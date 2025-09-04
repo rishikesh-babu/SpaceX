@@ -11,7 +11,7 @@ export default function Home() {
 
                 <div className="relative z-10 max-w-4xl mx-auto px-6">
                     {/* Title */}
-                    <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
                         🚀 SpaceX Explorer
                     </h1>
 
