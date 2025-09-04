@@ -7,6 +7,7 @@ export default function Rockets() {
 
     useEffect(() => {
         fetchRockets();
+        window.scroll(0, 0)
     }, []);
 
     function fetchRockets() {
