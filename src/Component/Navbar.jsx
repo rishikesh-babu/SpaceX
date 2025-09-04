@@ -33,11 +33,11 @@ export default function Navbar() {
     ]
 
     return (
-        <nav className="relative p-4 md:p-6 bg-gray-300 text-gray-900 dark:bg-gray-900 dark:text-white shadow-md transition-colors duration-300 flex justify-between items-center">
+        <nav className="relative p-4 md:p-6 bg-gray-300 dark:bg-gray-900 shadow-md transition-colors duration-300 flex justify-between items-center">
             <div className="text-2xl font-bold">
                 <Link
                     to="/"
-                    className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                    className="text-accent hover:text-primary transition duration-300"
                 >
                     🚀 SpaceX
                 </Link>

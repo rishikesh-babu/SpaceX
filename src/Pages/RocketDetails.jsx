@@ -25,14 +25,14 @@ export default function RocketDetails() {
             })
     }
     return (
-        <div className="p-6">
-            <h1 className="mb-4 font-bold text-4xl text-center darg:text-accent">{rocket?.name}</h1>
-            <p className="mb-6 text-lg dark:text-cyan-300 text-">{rocket?.description}</p>
+        <div className="py-6 px-1 sm:px-3 md:px-4 lg:px-6 ">
+            <h1 className="mb-4 font-bold text-4xl text-center text-accent">{rocket?.name}</h1>
+            <p className="mb-6 font-semibold text-lg text-cyan-600 dark:text-cyan-300 text-justify">{rocket?.description}</p>
 
             {/* Images */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="flex justify-center items-center flex-wrap gap-4">
                 {rocket?.flickr_images?.map((img, i) => (
-                    <img key={i} src={img} alt={rocket?.name} className="rounded-lg" />
+                    <img key={i} src={img} alt={rocket?.name} className="w-full rounded-lg" />
                 ))}
             </div>
 
