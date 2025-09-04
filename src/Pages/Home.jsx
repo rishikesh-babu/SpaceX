@@ -3,19 +3,56 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return (
         <div>
-            {/* Hero Section */}
-            <section className="h-[90vh] text-center bg-gradient-to-r from-slate-100 via-gray-200 to-slate-300 dark:bg-gradient-to-r dark:from-black dark:via-gray-800 dark:to-black flex flex-col justify-center items-center">
-                <div className="text-5xl font-extrabold mb-6">🚀 SpaceX Explorer</div>
-                <p className="text-lg mb-8 max-w-2xl mx-auto">
-                    Explore rockets, missions, launches and the journey of SpaceX.
-                </p>
-                <Link
-                    to="/rockets"
-                    className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold shadow-lg"
-                >
-                    Explore Rockets
-                </Link>
-            </section>
+           {/* Hero Section */}
+<section className="relative min-h-[100vh] py-8 text-center bg-gradient-to-r from-slate-100 via-gray-200 to-slate-300 dark:bg-gradient-to-r dark:from-black dark:via-gray-800 dark:to-black flex flex-col justify-center items-center overflow-hidden">
+  
+  {/* Subtle space background glow */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.08),_transparent_70%)] dark:bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05),_transparent_70%)]"></div>
+  
+  <div className="relative z-10 max-w-4xl mx-auto px-6">
+    {/* Title */}
+    <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+      🚀 SpaceX Explorer
+    </h1>
+
+    {/* Subtitle */}
+    <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90">
+      Discover the technology, missions, and vision that are shaping the future 
+      of space travel. From reusable rockets to interplanetary dreams, 
+      SpaceX is redefining what’s possible.
+    </p>
+
+    {/* Primary Action */}
+    <Link
+      to="/rockets"
+      className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold shadow-lg transition transform hover:scale-105"
+    >
+      Explore Rockets
+    </Link>
+
+    {/* Stats Row */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-gray-800 dark:text-gray-200">
+      <div>
+        <h3 className="text-4xl font-bold">200+</h3>
+        <p className="opacity-80">Successful Launches</p>
+      </div>
+      <div>
+        <h3 className="text-4xl font-bold">20+</h3>
+        <p className="opacity-80">Active Rockets & Spacecraft</p>
+      </div>
+      <div>
+        <h3 className="text-4xl font-bold">∞</h3>
+        <p className="opacity-80">Possibilities Ahead</p>
+      </div>
+    </div>
+
+    {/* Scroll Down Hint */}
+    <div className="mt-16 animate-bounce">
+      <span className="text-2xl opacity-70">⬇</span>
+    </div>
+  </div>
+</section>
+
 
             {/* About Section */}
             <section className="min-h-[90vh] py-7 px-1 sm:px-3 md:px-4 lg:px-6 bg-gradient-to-b from-gray-100 to-base-200 dark:from-gray-900 dark:to-black flex flex-col justify-evenly">
