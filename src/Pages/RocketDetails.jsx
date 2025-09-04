@@ -8,6 +8,7 @@ export default function RocketDetails() {
 
     useEffect(() => {
         fetchRocketDetails()
+        window.scroll(0, 0)
     }, [])
 
     function fetchRocketDetails() {
