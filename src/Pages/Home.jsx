@@ -108,22 +108,22 @@ export default function Home() {
 
 
             {/* Features Section */}
-            <section className="py-16 px-6 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
-                <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+            <section className="py-16 px-6 text-center bg-gradient-to-b from-gray-100 to-base-200 dark:from-gray-900 dark:to-black grid grid-cols-1 md:grid-cols-3 gap-8 ">
+                <div className="p-8 bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
                     <h3 className="text-2xl font-bold mb-4">🚀 Rockets</h3>
                     <p>
                         Discover SpaceX’s incredible lineup of rockets built to carry humans
                         and satellites into orbit.
                     </p>
                 </div>
-                <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
                     <h3 className="text-2xl font-bold mb-4">🛰️ Missions</h3>
                     <p>
                         Learn about historic missions that redefined space exploration and
                         future plans beyond Earth.
                     </p>
                 </div>
-                <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300">
                     <h3 className="text-2xl font-bold mb-4">🌌 Future</h3>
                     <p>
                         Explore the path to Mars, deep space travel, and humanity’s future
