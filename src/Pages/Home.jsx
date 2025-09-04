@@ -54,7 +54,7 @@ export default function Home() {
             </section>
 
             {/* About Section */}
-            <section className="min-h-[90vh] py-7 px-1 sm:px-3 md:px-4 lg:px-6 bg-gradient-to-b from-gray-100 to-base-200 dark:from-gray-900 dark:to-black flex flex-col justify-evenly">
+            <section className="min-h-[101vh] py-7 px-2 sm:px-3 md:px-4 lg:px-6 bg-gradient-to-b from-gray-100 to-base-200 dark:from-gray-900 dark:to-black flex flex-col justify-evenly">
                 <h2 className="font-extrabold text-4xl md:text-5xl text-center bg-gradient-to-r from-primary via-accent to-secondary text-transparent bg-clip-text">
                     🌌 About SpaceX
                 </h2>
@@ -66,7 +66,7 @@ export default function Home() {
                         <img
                             src="/space2.jpg"
                             alt="SpaceX Rocket Launch"
-                            className="relative size-[55vh] rounded-full shadow-2xl border-4 border-white/10 dark:border-gray-700 object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="relative size-[20rem] rounded-full shadow-2xl border-4 border-white/10 dark:border-gray-700 object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
 
