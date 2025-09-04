@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 export default function Theme() {
-    // Initialize theme from localStorage or default to 'light'
+    // Initialize theme from localStorage or default to 'dark'
     const [theme, setTheme] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
-        return savedTheme || 'light';
+        return savedTheme || 'dark';
     });
 
     // Effect to update the data-theme attribute and localStorage when the theme state changes

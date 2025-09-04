@@ -33,7 +33,7 @@ export default function Navbar() {
     ]
 
     return (
-        <div className="fixed w-full">
+        <div className="fixed w-full z-50">
             <nav className="relative p-4 md:p-6 bg-neutral-content dark:bg-gray-900 shadow-md transition-colors duration-300 flex justify-between items-center">
                 <div className="text-2xl font-bold">
                     <Link
