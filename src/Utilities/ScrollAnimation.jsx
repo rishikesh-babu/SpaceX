@@ -7,7 +7,7 @@ export function DownReveal({ children, className = '' }) {
             initial={{ opacity: 0, y: -40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            viewport={{ once: false, amount: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
         >
             {children}
         </motion.div>
@@ -21,7 +21,7 @@ export function Reveal({ children, className = '' }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            viewport={{ once: false, amount: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
         >
             {children}
         </motion.div>
@@ -35,7 +35,7 @@ export function UpReveal({ children, className = '' }) {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            viewport={{ once: false, amount: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
         >
             {children}
         </motion.div>
