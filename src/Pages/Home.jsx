@@ -1,6 +1,7 @@
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { DownReveal, Reveal, UpReveal } from "../Utilities/ScrollAnimation";
 
 export default function Home() {
     return (
@@ -13,24 +14,30 @@ export default function Home() {
 
                 <div className="relative z-10 max-w-4xl mx-auto px-6">
                     {/* Title */}
-                    <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-                        🚀 SpaceX Explorer
-                    </motion.h1>
+                    <Reveal>
+                        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                            🚀 SpaceX Explorer
+                        </h1>
+                    </Reveal>
 
                     {/* Subtitle */}
-                    <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90">
-                        Discover the technology, missions, and vision that are shaping the future
-                        of space travel. From reusable rockets to interplanetary dreams,
-                        SpaceX is redefining what’s possible.
-                    </p>
+                    <Reveal>
+                        <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90"                    >
+                            Discover the technology, missions, and vision that are shaping the future
+                            of space travel. From reusable rockets to interplanetary dreams,
+                            SpaceX is redefining what’s possible.
+                        </p>
+                    </Reveal>
 
                     {/* Primary Action */}
-                    <Link
-                        to="/rockets"
-                        className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold shadow-lg transition transform hover:scale-105"
-                    >
-                        Explore Rockets
-                    </Link>
+                    <Reveal>
+                        <Link
+                            to="/rockets"
+                            className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold shadow-lg transition transform hover:scale-105"
+                        >
+                            Explore Rockets
+                        </Link>
+                    </Reveal>
 
                     {/* Stats Row */}
                     <div className="grid grid-cols-3 gap-8 mt-16 text-gray-800 dark:text-gray-200">
