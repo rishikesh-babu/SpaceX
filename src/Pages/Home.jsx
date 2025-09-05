@@ -1,3 +1,4 @@
+import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -33,11 +34,15 @@ export default function Home() {
                     {/* Stats Row */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-gray-800 dark:text-gray-200">
                         <div>
-                            <h3 className="text-4xl font-bold">200+</h3>
+                            <h3 className="text-4xl font-bold">
+                                <CountUp start={0} end={200} duration={5} />+
+                            </h3>
                             <p className="opacity-80">Successful Launches</p>
                         </div>
                         <div>
-                            <h3 className="text-4xl font-bold">20+</h3>
+                            <h3 className="text-4xl font-bold">
+                                <CountUp end={20} duration={5} />+
+                            </h3>
                             <p className="opacity-80">Active Rockets & Spacecraft</p>
                         </div>
                         <div>
