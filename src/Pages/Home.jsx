@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Home() {
     return (
@@ -12,9 +13,9 @@ export default function Home() {
 
                 <div className="relative z-10 max-w-4xl mx-auto px-6">
                     {/* Title */}
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                    <motion.h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
                         🚀 SpaceX Explorer
-                    </h1>
+                    </motion.h1>
 
                     {/* Subtitle */}
                     <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90">
@@ -32,7 +33,7 @@ export default function Home() {
                     </Link>
 
                     {/* Stats Row */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-gray-800 dark:text-gray-200">
+                    <div className="grid grid-cols-3 gap-8 mt-16 text-gray-800 dark:text-gray-200">
                         <div>
                             <h3 className="text-4xl font-bold">
                                 <CountUp start={0} end={200} duration={5} />+
