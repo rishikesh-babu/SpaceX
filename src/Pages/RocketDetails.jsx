@@ -122,8 +122,8 @@ export default function RocketDetails() {
 
     return (
         <div className="py-6 px-1 sm:px-3 md:px-4 lg:px-6 ">
-            <h1 className="mb-4 font-bold text-4xl text-center text-accent">{rocket?.name}</h1>
-            <p className="mb-6 font-semibold text-lg text-justify text-cyan-600 dark:text-cyan-300">{rocket?.description}</p>
+            <h1 className="mb-4 font-bold text-4xl text-center text-cyan-500 dark:text-accent">{rocket?.name}</h1>
+            <p className="mb-6 font-semibold text-lg text-justify sm:text-center text-accent dark:text-cyan-300">{rocket?.description}</p>
 
             {/* Images */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -139,7 +139,7 @@ export default function RocketDetails() {
                         className="p-5 bg-gray-200 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow- transition"
                     >
                         <h2 className="pb-2 mb-3 font-bold text-xl text-center text-cyan-500 dark:text-accent border-b">
-                            {item.title}
+                            {item.title} 
                         </h2>
                         <div className="font-semibold sm:text-lg text-info space-y-2">{item.content}</div>
                     </div>
