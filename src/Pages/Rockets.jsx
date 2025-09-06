@@ -40,7 +40,7 @@ export default function Rockets() {
                     <Link to={`/rockets/${rocket.id}`}>
                         <div
                             key={rocket.id}
-                            className="relative group p-6 bg-base-300 dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all"
+                            className="relative group p-6 bg-gray-300 dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all"
                         >
                             {/* Rocket Image (clickable) */}
                             <img
@@ -70,10 +70,10 @@ export default function Rockets() {
                     Want to learn more about SpaceX's journey?
                 </p>
                 <Link
-                    to="/missions"
+                    to="/launches"
                     className="mt-4 inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold shadow-lg transition transform hover:scale-105"
                 >
-                    Explore Missions 🚀
+                    Explore Launches 🚀
                 </Link>
             </div>
         </div>

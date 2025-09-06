@@ -7,6 +7,7 @@ import Crew from "../Pages/Crew";
 import Launchpads from "../Pages/Launchpads";
 import Ships from "../Pages/Ships";
 import RocketDetails from "../Pages/RocketDetails";
+import LaunchDetails from "../Pages/LaunchDetails";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/launches',
                 element: <Launches />
+            }, 
+            {
+                path: '/launches/:id',
+                element: <LaunchDetails />
             }, 
             {
                 path: '/crew',
