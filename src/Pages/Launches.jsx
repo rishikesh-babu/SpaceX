@@ -29,8 +29,8 @@ export default function Launches() {
         <div className="py-10 px-2 min-h-screen">
             {/* Title */}
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-extrabold mb-4">🚀 SpaceX Launches</h1>
-                <p className="text-lg max-w-2xl mx-auto opacity-80">
+                <h1 className="mb-6 font-extrabold text-4xl text-cyan-500 dark:text-accent">🚀 SpaceX Launches</h1>
+                <p className="max-w-2xl mx-auto text-lg text-justify sm:text-center text-accent dark:text-cyan-300">
                     Browse through historic, recent, and upcoming launches from SpaceX.
                     Click on a launch to view full details, failures, and media.
                 </p>
