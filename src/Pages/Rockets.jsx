@@ -25,12 +25,12 @@ export default function Rockets() {
                 alert('Error in fetching details')
             })
             .finally(() => {
-                setLoading(false)
+                // setLoading(false)
             })
     }
 
     return (
-        <div className="py-10 px-2 sm:px-3 md:px-4 lg:px-6 min-h-screen ">
+        <div className="py-10 px-2 sm:px-3 md:px-4 lg:px-6 ">
 
             {/* Page Title + Subtitle */}
             <div className="text-center mb-12">
@@ -43,8 +43,8 @@ export default function Rockets() {
             </div>
 
             {loading ? (
-                <div className="text-center">
-                    <span className="loading loading-spinner loading-xl text-primary"></span>
+                <div className="h-[20vh] flex justify-center items-center">
+                    <span className="loading loading-spinner loading-xl scale-150 text-primary"></span>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
