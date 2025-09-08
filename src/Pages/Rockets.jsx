@@ -33,8 +33,8 @@ export default function Rockets() {
         <div className="py-10 px-2 sm:px-3 md:px-4 lg:px-6 ">
 
             {/* Page Title + Subtitle */}
-            <div className="text-center mb-12">
-                <h1 className="mb-4 font-extrabold text-4xl md:text-5xl text-cyan-500 dark:text-accent">🚀 SpaceX Rockets</h1>
+            <div className="mb-12">
+                <h1 className="mb-4 font-extrabold text-4xl md:text-5xl text-center text-cyan-500 dark:text-accent">🚀 SpaceX Rockets</h1>
                 <p className="max-w-2xl mx-auto font-semibold text-lg text-justify sm:text-center text-accent dark:text-cyan-300">
                     Discover the incredible fleet of SpaceX rockets that are pushing the
                     boundaries of innovation and making space travel more accessible.
