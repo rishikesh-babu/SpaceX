@@ -17,7 +17,6 @@ export default function LaunchDetails() {
             url: `https://api.spacexdata.com/v4/launches/${id}`
         })
             .then((res) => {
-                console.log('res.launchDetails :>> ', res.data);
                 setLaunchDetails(res.data) 
             })
             .catch((err) => {
@@ -25,7 +24,6 @@ export default function LaunchDetails() {
                 alert('Error in fetching launchDetails')
             })
     }
-
     return (
         <div className="p-6">
             <h1 className="text-2xl font-bold mb-4">🚀 Launch Details</h1>

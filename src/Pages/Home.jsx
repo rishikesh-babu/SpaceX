@@ -2,8 +2,12 @@ import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { DownReveal, Reveal, UpReveal } from "../Utilities/ScrollAnimation";
+import { useEffect } from "react";
 
 export default function Home() {
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, [])
     return (
         <div>
             {/* Hero Section */}
