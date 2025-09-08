@@ -41,7 +41,7 @@ export default function Launches() {
                 alert('Error in fetching launches')
             })
             .finally(() => {
-                // setLoading(false)
+                setLoading(false)
             })
     }
 

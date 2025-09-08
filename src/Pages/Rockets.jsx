@@ -25,7 +25,7 @@ export default function Rockets() {
                 alert('Error in fetching details')
             })
             .finally(() => {
-                // setLoading(false)
+                setLoading(false)
             })
     }
 
