@@ -145,7 +145,6 @@ export default function RocketDetails() {
                     </div>
                 ))}
             </div>
-
         </div>
 
     )

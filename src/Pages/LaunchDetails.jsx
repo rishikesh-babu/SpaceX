@@ -24,23 +24,58 @@ export default function LaunchDetails() {
                 alert('Error in fetching launchDetails')
             })
     }
+
+    const sections = [
+        {
+            title: 'Mission Patch',
+            content: (
+                <>
+                    <img src={launchDetails?.links?.patch?.large} alt={launchDetails?.name || "Launch Patch"} />
+                </>
+            )
+        }, 
+        {
+            title: 'Basic Info', 
+            content: (
+                <>
+                <p><span>Flight #: </span> {launchDetails?.flight_number}</p>
+                <p>
+                    <span>Date: {" "}</span>
+                    {launchDetails?.date_utc? new Date(launchDetails?.date_utc).toLocaleString(): "N/A"}
+                </p>
+                </>
+            )
+        }
+    ]
+
     return (
         <div className="py-10 px-2 sm:px-3 md:px-4 lg:px-6">
             <h1 className="mb-8 font-extrabold text-4xl md:text-5xl text-center text-cyan-500 dark:text-accent">
                 🚀 {launchDetails?.name}
             </h1>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {sections?.map((item, index) => (
+                    <div
+                        key={index}
+                        className="p-5 bg-gray-200 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow- transition"
+                    >
+                        <h2 className="pb-2 mb-3 font-bold text-xl text-center text-cyan-500 dark:text-accent border-b">
+                            {item.title} 
+                        </h2>
+                        <div className="font-semibold sm:text-lg text-info space-y-2">{item.content}</div>
+                    </div>
+                ))}
+            </div> */}
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Patch Card */}
-                <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-6 flex flex-col items-center">
-                    <h2 className="text-lg font-semibold mb-3">Mission Patch</h2>
+                <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-md ">
+                    <div className="font-bold text-xl text-center text-cyan-500 dark:text-accent border-b">Mission Patch</div>
                     <img
-                        src={
-                            launchDetails?.links?.patch?.large ||
-                            "https://via.placeholder.com/300x300?text=No+Patch"
-                        }
+                        src={launchDetails?.links?.patch?.large}
                         alt={launchDetails?.name || "Launch Patch"}
-                        className="size-40 object-contain"
+                        className="mx-auto size-40 object-contain text-center border"
                     />
                 </div>
 
