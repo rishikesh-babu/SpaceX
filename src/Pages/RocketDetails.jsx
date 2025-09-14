@@ -12,10 +12,7 @@ export default function RocketDetails() {
     }, [])
 
     function fetchRocketDetails() {
-        axios({
-            method: 'GET',
-            url: `https://api.spacexdata.com/v4/rockets/${id}`
-        })
+        axios(`https://api.spacexdata.com/v4/rockets/${id}`)
             .then((res) => {
                 console.log('res :>> ', res);
                 setRocket(res.data)
@@ -139,7 +136,7 @@ export default function RocketDetails() {
                         className="p-5 bg-gray-200 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow- transition"
                     >
                         <h2 className="pb-2 mb-3 font-bold text-xl text-center text-cyan-500 dark:text-accent border-b">
-                            {item.title} 
+                            {item.title}
                         </h2>
                         <div className="font-semibold sm:text-lg text-info space-y-2">{item.content}</div>
                     </div>

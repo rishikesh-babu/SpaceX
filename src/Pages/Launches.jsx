@@ -28,10 +28,7 @@ export default function Launches() {
     })
 
     function fetchlaunches() {
-        axios({
-            method: 'GET',
-            url: 'https://api.spacexdata.com/v4/launches'
-        })
+        axios('https://api.spacexdata.com/v4/launches')
             .then((res) => {
                 console.log('res :>> ', res);
                 setLaunches(res.data)

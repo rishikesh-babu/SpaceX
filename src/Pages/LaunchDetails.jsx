@@ -12,10 +12,7 @@ export default function LaunchDetails() {
     }, [])
 
     function fetchData() {
-        axios({
-            method: 'GET',
-            url: `https://api.spacexdata.com/v4/launches/${id}`
-        })
+        axios(`https://api.spacexdata.com/v4/launches/${id}`)
             .then((res) => {
                 setLaunchDetails(res.data)
             })

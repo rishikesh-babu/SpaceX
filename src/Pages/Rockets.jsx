@@ -12,10 +12,7 @@ export default function Rockets() {
     }, []);
 
     function fetchRockets() {
-        axios({
-            method: 'GET',
-            url: 'https://api.spacexdata.com/v4/rockets'
-        })
+        axios('https://api.spacexdata.com/v4/rockets')
             .then((res) => {
                 console.log('res.data :>> ', res.data);
                 setRockets(res.data);
