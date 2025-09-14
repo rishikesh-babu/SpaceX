@@ -9,6 +9,7 @@ export default function Crew() {
         fetchData()
         window.scroll(0, 0)
     }, [])
+
     function fetchData() {
         axios.get('https://api.spacexdata.com/v4/crew')
             .then((res) => {
@@ -20,12 +21,12 @@ export default function Crew() {
             })
     }
     return (
-        <div className="p-6">
-            <h1 className="mb-6 font-bold text-2xl md:text-3xl text-center text-cyan-500 dark:text-accent">
+        <div className="py-6 px-1">
+            <h1 className="mt-6 mb-12 font-bold text-2xl md:text-3xl text-center text-cyan-500 dark:text-accent">
                 🚀 SpaceX Crew Members
             </h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 {crewData.map((crew) => (
                     <div
                         key={crew.id}
@@ -36,9 +37,9 @@ export default function Crew() {
                             <img
                                 src={crew.image}
                                 alt={crew.name}
-                                className="aspect object-cover object-top"
+                                className="aspect-[5/4] object-cover object-top"
                             />
-                            <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium ${crew.status === "active" ? "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300" : "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300"}`}>
+                            <span className={`absolute top-3 right-3 px-3 py-1 font-medium rounded-full ${crew.status === "active" ? "bg-green-300 text-green-700 dark:bg-green-900 dark:text-green-300" : "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300"}`}>
                                 {crew.status}
                             </span>
                         </div>
@@ -46,8 +47,8 @@ export default function Crew() {
                         {/* Body */}
                         <div className="p-5">
                             {/* Name & Agency */}
-                            <h2 className="text-xl font-bold text-gray-800 dark:text-white">{crew.name}</h2>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm">{crew.agency}</p>
+                            <h2 className="text-xl font-bold text-cyan-500 dark:text-accent">{crew.name}</h2>
+                            <p className="font-semibold text-sm text-secondary">{crew.agency}</p>
 
                             {/* Wikipedia Link */}
                             <a
