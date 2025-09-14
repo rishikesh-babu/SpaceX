@@ -8,7 +8,6 @@ import Launchpads from "../Pages/Launchpads";
 import Ships from "../Pages/Ships";
 import RocketDetails from "../Pages/RocketDetails";
 import LaunchDetails from "../Pages/LaunchDetails";
-import CrewDetails from "../Pages/CrewDetails";
 
 const router = createBrowserRouter([
     {

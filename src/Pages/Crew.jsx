@@ -20,8 +20,8 @@ export default function Crew() {
             })
     }
     return (
-         <div className="p-6">
-            <h1 className="text-2xl md:text-3xl font-bold text-center mb-6 text-cyan-500 dark:text-accent">
+        <div className="p-6">
+            <h1 className="mb-6 font-bold text-2xl md:text-3xl text-center text-cyan-500 dark:text-accent">
                 🚀 SpaceX Crew Members
             </h1>
 
@@ -29,53 +29,55 @@ export default function Crew() {
                 {crewData.map((crew) => (
                     <div
                         key={crew.id}
-                        className="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+                        className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden "
                     >
-                        {/* Crew Image */}
-                        <img
-                            src={crew.image || "https://via.placeholder.com/150"}
-                            alt={crew.name}
-                            className="w-32 h-32 mx-auto rounded-full object-cover border"
-                        />
+                        {/* Header with Image */}
+                        <div className="relative">
+                            <img
+                                src={crew.image}
+                                alt={crew.name}
+                                className="aspect object-cover object-top"
+                            />
+                            <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium ${crew.status === "active" ? "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300" : "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300"}`}>
+                                {crew.status}
+                            </span>
+                        </div>
 
-                        {/* Name & Agency */}
-                        <h2 className="mt-4 text-xl font-semibold">{crew.name}</h2>
-                        <p className="text-gray-500 dark:text-gray-400">{crew.agency}</p>
+                        {/* Body */}
+                        <div className="p-5">
+                            {/* Name & Agency */}
+                            <h2 className="text-xl font-bold text-gray-800 dark:text-white">{crew.name}</h2>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm">{crew.agency}</p>
 
-                        {/* Status */}
-                        <p
-                            className={`mt-2 font-medium ${
-                                crew.status === "active" ? "text-green-500" : "text-red-500"
-                            }`}
-                        >
-                            {crew.status}
-                        </p>
-
-                        {/* Wikipedia */}
-                        <div className="mt-3">
+                            {/* Wikipedia Link */}
                             <a
                                 href={crew.wikipedia}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-500 hover:underline"
+                                className="mt-3 inline-block text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline"
                             >
-                                📚 Wikipedia
+                                📚 Learn more
                             </a>
-                        </div>
 
-                        {/* Launch IDs */}
-                        {crew.launches?.length > 0 && (
-                            <div className="mt-4 text-left">
-                                <h3 className="font-semibold mb-2">Launches:</h3>
-                                <ul className="list-disc list-inside text-sm space-y-1">
-                                    {crew.launches.map((launchId, index) => (
-                                        <li key={index} className="text-gray-600 dark:text-gray-300">
-                                            {launchId}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
+                            {/* Launch IDs */}
+                            {crew.launches?.length > 0 && (
+                                <div className="mt-4">
+                                    <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                                        🚀 Launches
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {crew.launches.map((launchId, index) => (
+                                            <span
+                                                key={index}
+                                                className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-xs text-gray-600 dark:text-gray-300 shadow-sm"
+                                            >
+                                                {launchId}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>
