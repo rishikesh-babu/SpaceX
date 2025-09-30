@@ -72,9 +72,7 @@ export default function Rockets() {
                         </Link>
                     ))}
                 </div>
-            )
-            }
-
+            )}
 
             {/* Footer CTA */}
             <div className="text-center mt-16">
