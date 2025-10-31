@@ -89,7 +89,7 @@ export default function LaunchDetails() {
                 <>
                     <p>
                         <span>Rocket ID:</span>{" "}
-                        <Link to={`/rockets/${launchDetails?.rocket}`} >{launchDetails?.rocket}</Link>
+                        <Link to={`/rocket/${launchDetails?.rocket}`} >{launchDetails?.rocket}</Link>
                         
                     </p>
                     <p>
