@@ -86,27 +86,23 @@ export default function LaunchDetails() {
         {
             title: "Technical Data",
             content: (
-                <>
-                    <p>
-                        <span>Rocket ID:</span>{" "}
-                        <Link to={`/rocket/${launchDetails?.rocket}`} >{launchDetails?.rocket}</Link>
-                        
-                    </p>
-                    <p>
-                        <span>Payloads:</span>{" "}
-                        {launchDetails?.payloads?.join(", ") || "N/A"}
-                    </p>
-                    <p>
-                        <span>Launchpad:</span>{" "}
-                        {launchDetails?.launchpad}
-                    </p>
-                </>
+                <div className='flex justify-evenly'>
+                    <Link to={`/rockets/${launchDetails?.rocket}`} className='btn btn-info' >
+                        Rocket Details
+                    </Link>
+                    {/* <span>Payloads:</span>{" "}
+                        {launchDetails?.payloads?.join(", ") || "N/A"} */}
+
+                    <Link to={`/launchpad/${launchDetails?.launchpad}`} className='btn btn-accent' >
+                        Launchpad Details
+                    </Link>
+                </div>
             ),
         },
         {
             title: "External Links",
             content: (
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap justify-evenly gap-4">
                     {launchDetails?.links?.webcast && (
                         <a
                             href={launchDetails?.links?.webcast}
