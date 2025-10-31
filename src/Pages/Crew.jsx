@@ -67,13 +67,14 @@ export default function Crew() {
                                         🚀 Launches
                                     </h3>
                                     <div className="flex flex-wrap gap-2">
-                                        {crew.launches.map((launchId, index) => (
-                                            <span
+                                        {crew?.launches?.map((launchId, index) => (
+                                            <Link
+                                                to={`/launches/${launchId}`}
                                                 key={index}
-                                                className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-xs text-gray-600 dark:text-gray-300 shadow-sm"
+                                                className="btn btn-sm btn-info"
                                             >
-                                                {launchId}
-                                            </span>
+                                                Launch {crew?.launches?.length === 1 ? '' : index + 1}
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
