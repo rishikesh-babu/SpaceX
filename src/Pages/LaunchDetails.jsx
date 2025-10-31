@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function LaunchDetails() {
     const { id } = useParams()
@@ -65,7 +65,7 @@ export default function LaunchDetails() {
         },
         {
             title: "Mission Details",
-            content: <p>{launchDetails?.details || "No details available"}</p>,
+            content: <p className='text-justify'>{launchDetails?.details || "No details available"}</p>,
         },
         {
             title: "Failures",
@@ -89,7 +89,8 @@ export default function LaunchDetails() {
                 <>
                     <p>
                         <span>Rocket ID:</span>{" "}
-                        {launchDetails?.rocket}
+                        <Link to={`/rockets/${launchDetails?.rocket}`} >{launchDetails?.rocket}</Link>
+                        
                     </p>
                     <p>
                         <span>Payloads:</span>{" "}

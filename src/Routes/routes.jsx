@@ -8,11 +8,13 @@ import Launchpads from "../Pages/Launchpads";
 import Ships from "../Pages/Ships";
 import RocketDetails from "../Pages/RocketDetails";
 import LaunchDetails from "../Pages/LaunchDetails";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/', 
         element: <Layout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/', 
