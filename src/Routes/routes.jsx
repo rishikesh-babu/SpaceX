@@ -9,6 +9,7 @@ import Ships from "../Pages/Ships";
 import RocketDetails from "../Pages/RocketDetails";
 import LaunchDetails from "../Pages/LaunchDetails";
 import ErrorPage from "../Pages/ErrorPage";
+import LaunchpadDetails from "../Pages/LaunchpadDetails";
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path: '/launchpads',
                 element: <Launchpads />
+            },
+            {
+                path: '/launchpads/:id',
+                element: <LaunchpadDetails />
             }, 
             {
                 path: '/ships',
