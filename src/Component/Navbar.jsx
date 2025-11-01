@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Theme from "./Theme";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation()
+
+    console.log('location :>> ', location);
 
     const menu = [
         {
@@ -53,7 +56,7 @@ export default function Navbar() {
                                 key={index}
                                 to={item.path}
 
-                                className="py-4 pl-5 w-full text-left text-info hover:text-secondary hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors duration-200"
+                                className={`py-4 pl-5 w-full text-left text-info hover:text-secondary hover:bg-gray-300 ${location.pathname === item?.path && 'text-secondary'} dark:hover:bg-gray-800 transition-colors duration-200`}
                             >
                                 {item.name}
                             </Link>
