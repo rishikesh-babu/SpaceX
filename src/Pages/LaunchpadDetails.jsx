@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function LaunchpadDetails() {
     const { id } = useParams()
@@ -8,6 +8,7 @@ export default function LaunchpadDetails() {
 
     useEffect(() => {
         fetchDetails()
+        window.scroll(0, 0)
     }, [])
 
     function fetchDetails() {
@@ -45,9 +46,11 @@ export default function LaunchpadDetails() {
                         href={`https://www.google.com/maps?q=${pad?.latitude},${pad?.longitude}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block mt-3 text-blue-600 hover:underline"
+                        className="mt-3 inline-block"
                     >
-                        🌍 View on Google Maps
+                        <button className='btn btn-dash btn-info'>
+                            🌍 View on Google Maps
+                        </button>
                     </a>
                 </div>
             )
@@ -66,9 +69,13 @@ export default function LaunchpadDetails() {
             content: (
                 <div>
                     {pad?.rockets?.length > 0 ? (
-                        <ul className="list-disc list-inside text-sm">
+                        <ul className="flex gap-3">
                             {pad?.rockets.map((r, i) => (
-                                <li key={i}>{r}</li>
+                                <li key={i}>
+                                    <Link to={`/rockets/${r}`} className="btn btn-outline btn-info">
+                                        View Rocket
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     ) : (
@@ -94,49 +101,6 @@ export default function LaunchpadDetails() {
                 />
             </div>
 
-            {/* Info Grid */}
-            <div className="p-8 grid md:grid-cols-2 gap-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">📍 Location</h2>
-                    <p><strong>Locality:</strong> {pad?.locality}</p>
-                    <p><strong>Region:</strong> {pad?.region}</p>
-                    <p><strong>Timezone:</strong> {pad?.timezone}</p>
-                </div>
-
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">🧭 Coordinates</h2>
-                    <p><strong>Latitude:</strong> {pad?.latitude}</p>
-                    <p><strong>Longitude:</strong> {pad?.longitude}</p>
-                    <a
-                        href={`https://www.google.com/maps?q=${pad?.latitude},${pad?.longitude}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block mt-3 text-blue-600 hover:underline"
-                    >
-                        🌍 View on Google Maps
-                    </a>
-                </div>
-
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">🚀 Launch Data</h2>
-                    <p><strong>Attempts:</strong> {pad?.launch_attempts}</p>
-                    <p><strong>Successes:</strong> {pad?.launch_successes}</p>
-                </div>
-
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">🛫 Rockets Used</h2>
-                    {pad?.rockets?.length > 0 ? (
-                        <ul className="list-disc list-inside text-sm">
-                            {pad?.rockets.map((r, i) => (
-                                <li key={i}>{r}</li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>No rockets data available.</p>
-                    )}
-                </div>
-            </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
                 {content?.map((item, index) => (
                     <div
@@ -144,13 +108,14 @@ export default function LaunchpadDetails() {
                         className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     >
                         {/* Heading */}
-                        <div className="text-lg font-semibold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
-                            <span className="text-blue-600 dark:text-blue-400">🔹</span>
+                        <div className="text-2xl font-semibold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
                             {item?.heading}
                         </div>
 
+                        <hr  className='mb-4' />
+
                         {/* Content */}
-                        <div className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                        <div className="font-medium text-gray-600 dark:text-gray-300">
                             {item?.content}
                         </div>
                     </div>
