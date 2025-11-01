@@ -6,8 +6,6 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation()
 
-    console.log('location :>> ', location);
-
     const menu = [
         {
             name: 'Home',
