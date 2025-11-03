@@ -33,7 +33,7 @@ export default function Launchpads() {
                 {launchpadDetails.map((pad) => (
                     <div
                         key={pad.id}
-                        className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
+                        className=" dark:bg-gray-800 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
                     >
                         {/* Image */}
                         <div className="relative">
@@ -61,7 +61,7 @@ export default function Launchpads() {
                                 {pad.locality}, {pad.region}
                             </p>
 
-                            <div className="flex justify-between text-sm mb-3">
+                            <div className="mb-3 text-sm flex justify-between">
                                 <p>🚀 Attempts: <strong>{pad.launch_attempts}</strong></p>
                                 <p>✅ Success: <strong>{pad.launch_successes}</strong></p>
                             </div>

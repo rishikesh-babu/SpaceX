@@ -48,7 +48,7 @@ export default function LaunchpadDetails() {
                         rel="noopener noreferrer"
                         className="mt-3 inline-block"
                     >
-                        <button className='btn btn-dash btn-info'>
+                        <button className='btn btn-outline btn-info'>
                             🌍 View on Google Maps
                         </button>
                     </a>
@@ -87,13 +87,13 @@ export default function LaunchpadDetails() {
     ]
 
     return (
-        <div className="p-6 max-w-5xl mx-auto">
+        <div className="py-6 px-1 sm:p-6 max-w-6xl mx-auto">
             <h1 className="text-4xl font-extrabold text-center mb-10 text-gray-800 dark:text-white">
                 {pad?.name}
             </h1>
 
             {/* Image */}
-            <div className="w-full h-64 mb-6 overflow-hidden rounded-2xl shadow-lg">
+            <div className="mb-6 w-full overflow-hidden rounded-2xl shadow-lg">
                 <img
                     src={pad?.images?.large?.[0] || "https://via.placeholder.com/400x250"}
                     alt={pad?.name}
@@ -101,14 +101,14 @@ export default function LaunchpadDetails() {
                 />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {content?.map((item, index) => (
                     <div
                         key={index}
-                        className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                        className="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     >
                         {/* Heading */}
-                        <div className="text-2xl font-semibold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
+                        <div className="mb-3 text-2xl font-semibold text-nowrap text-gray-800 dark:text-white flex items-center gap-2">
                             {item?.heading}
                         </div>
 
@@ -126,7 +126,7 @@ export default function LaunchpadDetails() {
             {/* Description */}
             <div className="mt-8 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
                 <h2 className="text-xl font-semibold mb-2">📖 Description</h2>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-justify text-gray-600 dark:text-gray-300">
                     {pad?.details || "No additional details available."}
                 </p>
             </div>
