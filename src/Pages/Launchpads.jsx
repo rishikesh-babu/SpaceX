@@ -24,8 +24,8 @@ export default function Launchpads() {
             })
     }
     return (
-        <div className="p-6">
-            <h1 className="mb-7 font-extrabold text-4xl md:text-5xl text-center text-cyan-500 dark:text-accent">
+        <div className='py-6 px-1'>
+            <h1 className="mb-7 font-extrabold text-2xl md:text-5xl text-center text-cyan-500 dark:text-accent">
                 🚀 SpaceX Launchpads
             </h1>
 

@@ -41,7 +41,7 @@ export default function Navbar() {
                         to="/"
                         className="text-accent hover:text-primary transition duration-300"
                     >
-                        🚀 SpaceX {window.innerWidth}
+                        🚀 SpaceX
                     </Link>
                 </div>
 
