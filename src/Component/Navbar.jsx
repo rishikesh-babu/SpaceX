@@ -41,7 +41,7 @@ export default function Navbar() {
                         to="/"
                         className="text-accent hover:text-primary transition duration-300"
                     >
-                        🚀 SpaceX
+                        🚀 SpaceX {window.innerWidth}
                     </Link>
                 </div>
 
@@ -54,7 +54,7 @@ export default function Navbar() {
                                 key={index}
                                 to={item.path}
 
-                                className={`py-4 pl-5 w-full text-left text-info hover:text-secondary hover:bg-gray-300 ${location.pathname === item?.path && 'text-secondary'} dark:hover:bg-gray-800 transition-colors duration-200`}
+                                className={`py-4 pl-5 w-full text-left text-info hover:text-secondary hover:bg-gray-200 ${location.pathname === item?.path && 'text-secondary'} dark:hover:bg-gray-800 transition-colors duration-200`}
                             >
                                 {item.name}
                             </Link>
