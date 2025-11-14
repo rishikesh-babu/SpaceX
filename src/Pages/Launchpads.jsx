@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Launchpads() {
-    const [launchpadDetails, setLaunchpadDetails] = useState([])
+    const [launchpadDetails, setLaunchpadDetails] = useState(null)
 
     useEffect(() => {
         fetchLaunchpadDetails()
@@ -23,6 +23,15 @@ export default function Launchpads() {
                 console.log('err :>> ', err);
             })
     }
+
+    if (!launchpadDetails) {
+        return (
+            <div className='h-[85vh] flex justify-center items-center '>
+                <span className='loading loading-spinner loading-xl text-primary' />
+            </div>
+        )
+    }
+
     return (
         <div className='py-6 px-1'>
             <h1 className="mb-7 font-extrabold text-2xl md:text-5xl text-center text-cyan-500 dark:text-accent">
@@ -30,7 +39,7 @@ export default function Launchpads() {
             </h1>
 
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {launchpadDetails.map((pad) => (
+                {launchpadDetails?.map((pad) => (
                     <div
                         key={pad.id}
                         className=" dark:bg-gray-800 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"

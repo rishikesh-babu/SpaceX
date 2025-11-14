@@ -138,6 +138,14 @@ export default function LaunchDetails() {
         },
     ];
 
+    if (!launchDetails) {
+        return (
+            <div className='h-[85vh] flex justify-center items-center '>
+                <span className='loading loading-spinner loading-xl text-primary' />
+            </div>
+        )
+    }
+
     return (
         <div className="py-10 px-2 sm:px-3 md:px-4 lg:px-6">
             <h1 className="mb-8 font-extrabold text-4xl md:text-5xl text-center text-cyan-500 dark:text-accent">

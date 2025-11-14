@@ -47,7 +47,7 @@ export default function LaunchpadDetails() {
                         rel="noopener noreferrer"
                         className="mt-3 inline-block"
                     >
-                        <button className='btn btn-outline btn-info'>
+                        <button className='btn btn-outline btn-info hover:text-white'>
                             🌍 View on Google Maps
                         </button>
                     </a>
@@ -71,7 +71,7 @@ export default function LaunchpadDetails() {
                         <ul className="flex gap-3">
                             {pad?.rockets.map((r, i) => (
                                 <li key={i}>
-                                    <Link to={`/rockets/${r}`} className="btn btn-outline btn-info">
+                                    <Link to={`/rockets/${r}`} className="btn btn-outline btn-info hover:text-white">
                                         View Rocket
                                     </Link>
                                 </li>

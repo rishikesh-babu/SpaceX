@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Crew() {
-    const [crewData, setCrewData] = useState([])
+    const [crewData, setCrewData] = useState(null)
 
     useEffect(() => {
         fetchData()
@@ -20,6 +20,15 @@ export default function Crew() {
                 alert('Error in fetching Crew details')
             })
     }
+
+    if (!crewData) {
+        return (
+            <div className='h-[85vh] flex justify-center items-center '>
+                <span className='loading loading-spinner loading-xl text-primary' />
+            </div>
+        )
+    }
+
     return (
         <div className="py-6 px-1">
             <h1 className="mt-6 mb-12 font-bold text-2xl md:text-3xl text-center text-cyan-500 dark:text-accent">

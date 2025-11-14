@@ -14,8 +14,8 @@ export default function RocketDetails() {
     function fetchRocketDetails() {
         axios(`https://api.spacexdata.com/v4/rockets/${id}`)
             .then((res) => {
-                console.log('res :>> ', res);
                 setRocket(res.data)
+                console.log('res :>> ', res);
             })
             .catch((err) => {
                 console.log('err :>> ', err);
@@ -116,6 +116,14 @@ export default function RocketDetails() {
             ),
         },
     ];
+
+    if (!rocket) {
+        return (
+            <div className='h-[85vh] flex justify-center items-center '>
+                <span className='loading loading-spinner loading-xl text-primary' />
+            </div>
+        )
+    }
 
     return (
         <div className="py-6 px-1 sm:px-3 md:px-4 lg:px-6 ">
