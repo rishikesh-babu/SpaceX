@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 export default function LaunchpadDetails() {
     const { id } = useParams()
-    const [pad, setPad] = useState()
+    const [pad, setPad] = useState(null)
 
     useEffect(() => {
         fetchDetails()
@@ -18,7 +18,6 @@ export default function LaunchpadDetails() {
         })
             .then((res) => {
                 setPad(res?.data)
-                console.log('res?.data :>> ', res?.data);
             })
             .catch((err) => {
                 console.log('err :>> ', err);
@@ -85,6 +84,14 @@ export default function LaunchpadDetails() {
             )
         }
     ]
+
+    if (!pad) {
+        return (
+            <div className='h-[85vh] flex justify-center items-center '>
+                <span className='loading loading-spinner loading-xl text-primary' />
+            </div>
+        )
+    }
 
     return (
         <div className="py-6 px-1 sm:p-6 max-w-6xl mx-auto">
