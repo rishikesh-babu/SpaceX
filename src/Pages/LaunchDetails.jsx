@@ -93,7 +93,7 @@ export default function LaunchDetails() {
                     {/* <span>Payloads:</span>{" "}
                         {launchDetails?.payloads?.join(", ") || "N/A"} */}
 
-                    <Link to={`/launchpad/${launchDetails?.launchpad}`} className='text-black btn btn-accent' >
+                    <Link to={`/launchpads/${launchDetails?.launchpad}`} className='text-black btn btn-accent' >
                         Launchpad Details
                     </Link>
                 </div>
