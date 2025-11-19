@@ -156,7 +156,7 @@ export default function LaunchDetails() {
                 {sections?.map((item, index) => (
                     <div
                         key={index}
-                        className="p-5 bg-gray-200 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow transition"
+                        className="p-5 bg-gray-200 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow transition"
                     >
                         <h2 className="pb-2 mb-3 font-bold text-xl text-center text-cyan-500 dark:text-accent border-b">
                             {item.title}
