@@ -112,7 +112,7 @@ export default function LaunchpadDetails() {
                 {content?.map((item, index) => (
                     <div
                         key={index}
-                        className="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                        className="p-6 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     >
                         {/* Heading */}
                         <div className="mb-3 text-2xl font-semibold text-nowrap text-gray-800 dark:text-white flex items-center gap-2">

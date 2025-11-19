@@ -141,9 +141,9 @@ export default function RocketDetails() {
                 {sections?.map((item, index) => (
                     <div
                         key={index}
-                        className="p-5 bg-gray-200 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow- transition"
+                        className="p-5 bg-gray-200 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-2xl shadow-md transition"
                     >
-                        <h2 className="pb-2 mb-3 font-bold text-xl text-center text-cyan-500 dark:text-accent border-b">
+                        <h2 className="pb-2 mb-3 font-bold text-xl text-center text-cyan-500 dark:text-accent border-b border-gray-400">
                             {item.title}
                         </h2>
                         <div className="font-semibold sm:text-lg text-info space-y-2">{item.content}</div>
