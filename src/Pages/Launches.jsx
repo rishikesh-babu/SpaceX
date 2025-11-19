@@ -93,7 +93,7 @@ export default function Launches() {
                     {filteredData.map((launch) => (
                         <Link to={`/launches/${launch?.id}`}
                             key={launch?.id}
-                            className="p-6 text-center bg-base-300 dark:bg-gray-800 hover:bg-gray-600/50 dark:hover:bg-gray-900/90 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                            className="p-6 text-center bg-base-300 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-900/90 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
                         >
                             {/* Mission Patch */}
                             <img
